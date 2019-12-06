@@ -11,6 +11,10 @@
 		513A0337239AFB2A001ABBE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513A0336239AFB2A001ABBE8 /* Assets.xcassets */; };
 		513A033A239AFB2A001ABBE8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513A0338239AFB2A001ABBE8 /* MainMenu.xib */; };
 		513A033D239AFB2A001ABBE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A033C239AFB2A001ABBE8 /* main.m */; };
+		513A034A239B0717001ABBE8 /* email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 513A0348239B0717001ABBE8 /* email@2x.png */; };
+		513A034B239B0717001ABBE8 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 513A0349239B0717001ABBE8 /* email.png */; };
+		513A034E239B0812001ABBE8 /* email-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 513A034C239B0812001ABBE8 /* email-highlighted.png */; };
+		513A034F239B0812001ABBE8 /* email-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 513A034D239B0812001ABBE8 /* email-highlighted@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		513A033B239AFB2A001ABBE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513A033C239AFB2A001ABBE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		513A033E239AFB2A001ABBE8 /* gmail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gmail.entitlements; sourceTree = "<group>"; };
+		513A0348239B0717001ABBE8 /* email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email@2x.png"; sourceTree = "<group>"; };
+		513A0349239B0717001ABBE8 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		513A034C239B0812001ABBE8 /* email-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-highlighted.png"; sourceTree = "<group>"; };
+		513A034D239B0812001ABBE8 /* email-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-highlighted@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 		513A0332239AFB29001ABBE8 /* gmail */ = {
 			isa = PBXGroup;
 			children = (
+				513A034C239B0812001ABBE8 /* email-highlighted.png */,
+				513A034D239B0812001ABBE8 /* email-highlighted@2x.png */,
+				513A0349239B0717001ABBE8 /* email.png */,
+				513A0348239B0717001ABBE8 /* email@2x.png */,
 				513A0333239AFB29001ABBE8 /* AppDelegate.h */,
 				513A0334239AFB29001ABBE8 /* AppDelegate.m */,
 				513A0336239AFB2A001ABBE8 /* Assets.xcassets */,
@@ -123,7 +135,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				513A0337239AFB2A001ABBE8 /* Assets.xcassets in Resources */,
+				513A034E239B0812001ABBE8 /* email-highlighted.png in Resources */,
+				513A034A239B0717001ABBE8 /* email@2x.png in Resources */,
+				513A034B239B0717001ABBE8 /* email.png in Resources */,
 				513A033A239AFB2A001ABBE8 /* MainMenu.xib in Resources */,
+				513A034F239B0812001ABBE8 /* email-highlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

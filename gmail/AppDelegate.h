@@ -9,7 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+- (IBAction)goloansnap:(id)sender;
 
+@property (strong, nonatomic) IBOutlet NSMenu *statusMenu;
+@property (strong, nonatomic) NSStatusItem *statusItem;
 
 @end
 
