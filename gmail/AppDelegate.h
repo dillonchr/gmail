@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define STATUS_ITEM_LENGTH 44.0
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 - (IBAction)goloansnap:(id)sender;
 

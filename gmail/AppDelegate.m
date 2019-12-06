@@ -16,11 +16,17 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:STATUS_ITEM_LENGTH];
     [self.statusItem setMenu:self.statusMenu];
     self.statusItem.button.image = [NSImage imageNamed:@"email"];
     self.statusItem.button.alternateImage = [NSImage imageNamed:@"email-highlighted"];
     self.statusItem.button.cell.highlighted = NO;
+    //  add quit option
+    [self.statusMenu addItemWithTitle:@"Quit" action:@selector(quitApp:) keyEquivalent:@"q"];
+}
+
+- (void)quitApp: (id)sender {
+    exit(0);
 }
 
 
