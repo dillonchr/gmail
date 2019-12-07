@@ -10,7 +10,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="statusMenu" destination="dX8-LR-dN5" id="yiv-xl-h9Y"/>
@@ -19,10 +19,15 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="dX8-LR-dN5">
             <items>
-                <menuItem title="dillon@goloansnap.com" id="2Pc-Fw-rp6">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem isSeparatorItem="YES" id="Uvd-M8-zQN"/>
+                <menuItem title="Add New Email" keyEquivalent="n" id="QbG-xA-9eY">
                     <connections>
-                        <action selector="goloansnap:" target="Voe-Tx-rLC" id="jdV-XG-lwK"/>
+                        <action selector="addNewEmail:" target="Voe-Tx-rLC" id="9zL-oU-i4X"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" keyEquivalent="q" id="Azw-fb-GwD">
+                    <connections>
+                        <action selector="quitApp:" target="Voe-Tx-rLC" id="gKT-bw-dyr"/>
                     </connections>
                 </menuItem>
             </items>

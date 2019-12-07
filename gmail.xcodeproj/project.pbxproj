@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510CBD38239B233700A8B660 /* AddEmailWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CBD36239B233700A8B660 /* AddEmailWindowController.m */; };
+		510CBD39239B233700A8B660 /* AddEmailWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 510CBD37239B233700A8B660 /* AddEmailWindowController.xib */; };
+		510CBD3C239B39AB00A8B660 /* EmailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 510CBD3B239B39AB00A8B660 /* EmailManager.m */; };
 		513A0335239AFB29001ABBE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A0334239AFB29001ABBE8 /* AppDelegate.m */; };
 		513A0337239AFB2A001ABBE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513A0336239AFB2A001ABBE8 /* Assets.xcassets */; };
 		513A033A239AFB2A001ABBE8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513A0338239AFB2A001ABBE8 /* MainMenu.xib */; };
@@ -18,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510CBD35239B233700A8B660 /* AddEmailWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddEmailWindowController.h; sourceTree = "<group>"; };
+		510CBD36239B233700A8B660 /* AddEmailWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddEmailWindowController.m; sourceTree = "<group>"; };
+		510CBD37239B233700A8B660 /* AddEmailWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmailWindowController.xib; sourceTree = "<group>"; };
+		510CBD3A239B39AB00A8B660 /* EmailManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmailManager.h; sourceTree = "<group>"; };
+		510CBD3B239B39AB00A8B660 /* EmailManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmailManager.m; sourceTree = "<group>"; };
 		513A0330239AFB29001ABBE8 /* gmail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gmail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513A0333239AFB29001ABBE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		513A0334239AFB29001ABBE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,6 +76,11 @@
 				513A0348239B0717001ABBE8 /* email@2x.png */,
 				513A0333239AFB29001ABBE8 /* AppDelegate.h */,
 				513A0334239AFB29001ABBE8 /* AppDelegate.m */,
+				510CBD3A239B39AB00A8B660 /* EmailManager.h */,
+				510CBD3B239B39AB00A8B660 /* EmailManager.m */,
+				510CBD35239B233700A8B660 /* AddEmailWindowController.h */,
+				510CBD36239B233700A8B660 /* AddEmailWindowController.m */,
+				510CBD37239B233700A8B660 /* AddEmailWindowController.xib */,
 				513A0336239AFB2A001ABBE8 /* Assets.xcassets */,
 				513A0338239AFB2A001ABBE8 /* MainMenu.xib */,
 				513A033B239AFB2A001ABBE8 /* Info.plist */,
@@ -138,6 +151,7 @@
 				513A034E239B0812001ABBE8 /* email-highlighted.png in Resources */,
 				513A034A239B0717001ABBE8 /* email@2x.png in Resources */,
 				513A034B239B0717001ABBE8 /* email.png in Resources */,
+				510CBD39239B233700A8B660 /* AddEmailWindowController.xib in Resources */,
 				513A033A239AFB2A001ABBE8 /* MainMenu.xib in Resources */,
 				513A034F239B0812001ABBE8 /* email-highlighted@2x.png in Resources */,
 			);
@@ -150,7 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510CBD3C239B39AB00A8B660 /* EmailManager.m in Sources */,
 				513A033D239AFB2A001ABBE8 /* main.m in Sources */,
+				510CBD38239B233700A8B660 /* AddEmailWindowController.m in Sources */,
 				513A0335239AFB29001ABBE8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
