@@ -41,8 +41,7 @@
     if (self.emails.count > currentEmailCount) {
         int i;
         for (i = currentEmailCount; i < self.emails.count; i++) {
-            //  TODO: remove string manip here once unix timestamp is old news
-            NSString *email = [self.emails[i] stringByReplacingOccurrencesOfString:@"+%ld" withString:@""];
+            NSString *email = self.emails[i];
             NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:email action:@selector(copyEmail:) keyEquivalent:@""];
             [menuItem setTag:i];
             [self.statusMenu insertItem:menuItem atIndex:i];
@@ -73,22 +72,15 @@
 
 - (NSString *)getUniqueSuffix {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"MMddyyyy-hhmmss";
+    //  + and @ included because the formatted date will include those to replace @ in original email
+    formatter.dateFormat = @"+MMddyyyy-hhmmss@";
     return [formatter stringFromDate:[NSDate date]];
 }
 
 - (IBAction)copyEmail:(NSMenuItem *)sender {
     NSInteger index = sender.tag;
     NSString *email = self.emails[index];
-    NSString *formatString = nil;
-
-    //  ensure existing users can still use updated human readable timestamp
-    if ([email containsString:@"+%ld"]) {
-        formatString = [email stringByReplacingOccurrencesOfString:@"%ld" withString:@"%@"];
-    } else {
-        formatString = [email stringByReplacingOccurrencesOfString:@"@" withString:@"+%@@"];
-    }
-
-    [self copyStringToClipboard:[NSString stringWithFormat:formatString, [self getUniqueSuffix]]];
+    NSString *uniqueEmail = [email stringByReplacingOccurrencesOfString:@"@" withString:[self getUniqueSuffix]];
+    [self copyStringToClipboard:uniqueEmail];
 }
 @end
