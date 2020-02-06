@@ -41,6 +41,7 @@
     if (self.emails.count > currentEmailCount) {
         int i;
         for (i = currentEmailCount; i < self.emails.count; i++) {
+            //  TODO: remove string manip here once unix timestamp is old news
             NSString *email = [self.emails[i] stringByReplacingOccurrencesOfString:@"+%ld" withString:@""];
             NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:email action:@selector(copyEmail:) keyEquivalent:@""];
             [menuItem setTag:i];
@@ -70,13 +71,24 @@
     [[NSPasteboard generalPasteboard] setString:s forType:NSPasteboardTypeString];
 }
 
-- (long)getUnixTimestamp {
-    return (long) [[NSDate date] timeIntervalSince1970];
+- (NSString *)getUniqueSuffix {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MMddyyyy-hhmmss";
+    return [formatter stringFromDate:[NSDate date]];
 }
 
 - (IBAction)copyEmail:(NSMenuItem *)sender {
     NSInteger index = sender.tag;
     NSString *email = self.emails[index];
-    [self copyStringToClipboard:[NSString stringWithFormat:email, [self getUnixTimestamp]]];
+    NSString *formatString = nil;
+
+    //  ensure existing users can still use updated human readable timestamp
+    if ([email containsString:@"+%ld"]) {
+        formatString = [email stringByReplacingOccurrencesOfString:@"%ld" withString:@"%@"];
+    } else {
+        formatString = [email stringByReplacingOccurrencesOfString:@"@" withString:@"+%@@"];
+    }
+
+    [self copyStringToClipboard:[NSString stringWithFormat:formatString, [self getUniqueSuffix]]];
 }
 @end
