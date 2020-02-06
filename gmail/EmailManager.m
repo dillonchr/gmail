@@ -24,7 +24,7 @@
     });
     if (hasOldFormatEmails) {
         NSArray *cleanEmails = [self cleanEmails:emails];
-        [[NSUserDefaults standardUserDefaults] setObject:cleanEmails forKey:EMAILS_KEY];
+        [self updateSavedEmails:cleanEmails];
         return cleanEmails;
     }
     return emails;
@@ -40,6 +40,10 @@
 
 + (void)addEmail:(NSString *)email {
     NSArray *emails = [[self getEmails] arrayByAddingObject:email];
+    [self updateSavedEmails:emails];
+}
+
++ (void)updateSavedEmails:(NSArray *)emails {
     [[NSUserDefaults standardUserDefaults] setObject:emails forKey:EMAILS_KEY];
 }
 @end
