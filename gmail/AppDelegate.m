@@ -38,6 +38,7 @@
 - (void)updateEmailOptions {
     self.emails = [EmailManager getEmails];
     int currentEmailCount = (int) self.statusMenu.itemArray.count - EMPTY_MENU_BAR_LENGTH;
+    
     if (self.emails.count > currentEmailCount) {
         int i;
         for (i = currentEmailCount; i < self.emails.count; i++) {
@@ -46,6 +47,7 @@
             [menuItem setTag:i];
             [self.statusMenu insertItem:menuItem atIndex:i];
         }
+        [self.statusMenu insertItem:[NSMenuItem separatorItem] atIndex:i];
     }
 }
 
@@ -59,6 +61,23 @@
     }
     [self.addEmailWindowController showWindow:nil];
     [self.addEmailWindowController.window orderFrontRegardless];
+}
+
+- (IBAction)clearSavedEmails: (id)sender {
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"Clear All Saved Emails?";
+    alert.informativeText = @"This will erase all emails currently stored and reset you to a clean slate.";
+    [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"No"];
+    NSModalResponse answer = [alert runModal];
+    if (answer == NSAlertFirstButtonReturn) {
+        NSArray *emailsToRemove = [EmailManager getEmails];
+        int i;
+        for (i = 0; i < emailsToRemove.count; i++) {
+            [self.statusMenu removeItem:[self.statusMenu itemWithTag:i]];
+        }
+        [EmailManager clearSavedEmails];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

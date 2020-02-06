@@ -45,5 +45,11 @@
 
 + (void)updateSavedEmails:(NSArray *)emails {
     [[NSUserDefaults standardUserDefaults] setObject:emails forKey:EMAILS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void)clearSavedEmails {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:EMAILS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

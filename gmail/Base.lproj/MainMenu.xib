@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -19,10 +20,15 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="dX8-LR-dN5">
             <items>
-                <menuItem isSeparatorItem="YES" id="Uvd-M8-zQN"/>
                 <menuItem title="Add New Email" keyEquivalent="n" id="QbG-xA-9eY">
                     <connections>
                         <action selector="addNewEmail:" target="Voe-Tx-rLC" id="9zL-oU-i4X"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Clear Saved Emails" id="m1A-Iy-Nb4">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clearSavedEmails:" target="Voe-Tx-rLC" id="ck8-8e-AWW"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit" keyEquivalent="q" id="Azw-fb-GwD">
@@ -31,7 +37,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="138.5" y="-112"/>
+            <point key="canvasLocation" x="138" y="-112"/>
         </menu>
     </objects>
 </document>

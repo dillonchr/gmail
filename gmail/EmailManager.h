@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EmailManager : NSObject 
 + (NSArray *)getEmails;
 + (void)addEmail: (NSString *)email;
++ (void)clearSavedEmails;
 @end
 
 NS_ASSUME_NONNULL_END
