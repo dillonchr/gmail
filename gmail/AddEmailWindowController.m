@@ -17,11 +17,11 @@
 @implementation AddEmailWindowController
 
 - (IBAction)addNewEmail: (id) sender {
-    NSArray *emailParts = [self.emailTextField.stringValue componentsSeparatedByString:@"@"];
+    NSString *newEmail = self.emailTextField.stringValue;
+    NSArray *emailParts = [newEmail componentsSeparatedByString:@"@"];
     if (emailParts.count == 2) {
         [self.emailTextField setStringValue:@""];
         [self.window close];
-        NSString *newEmail = [NSString stringWithFormat:@"%@%@%@", emailParts[0], @"+%ld@", emailParts[1]];
         [EmailManager addEmail:newEmail];
     } else {
         NSAlert *alert = [[NSAlert alloc] init];

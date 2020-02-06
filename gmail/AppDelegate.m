@@ -38,14 +38,16 @@
 - (void)updateEmailOptions {
     self.emails = [EmailManager getEmails];
     int currentEmailCount = (int) self.statusMenu.itemArray.count - EMPTY_MENU_BAR_LENGTH;
+    
     if (self.emails.count > currentEmailCount) {
         int i;
         for (i = currentEmailCount; i < self.emails.count; i++) {
-            NSString *email = [self.emails[i] stringByReplacingOccurrencesOfString:@"+%ld" withString:@""];
+            NSString *email = self.emails[i];
             NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:email action:@selector(copyEmail:) keyEquivalent:@""];
             [menuItem setTag:i];
             [self.statusMenu insertItem:menuItem atIndex:i];
         }
+        [self.statusMenu insertItem:[NSMenuItem separatorItem] atIndex:i];
     }
 }
 
@@ -61,6 +63,23 @@
     [self.addEmailWindowController.window orderFrontRegardless];
 }
 
+- (IBAction)clearSavedEmails: (id)sender {
+    NSAlert *alert = [[NSAlert alloc] init];
+    alert.messageText = @"Clear All Saved Emails?";
+    alert.informativeText = @"This will erase all emails currently stored and reset you to a clean slate.";
+    [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"No"];
+    NSModalResponse answer = [alert runModal];
+    if (answer == NSAlertFirstButtonReturn) {
+        NSArray *emailsToRemove = [EmailManager getEmails];
+        int i;
+        for (i = 0; i < emailsToRemove.count; i++) {
+            [self.statusMenu removeItem:[self.statusMenu itemWithTag:i]];
+        }
+        [EmailManager clearSavedEmails];
+    }
+}
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
@@ -70,13 +89,17 @@
     [[NSPasteboard generalPasteboard] setString:s forType:NSPasteboardTypeString];
 }
 
-- (long)getUnixTimestamp {
-    return (long) [[NSDate date] timeIntervalSince1970];
+- (NSString *)getUniqueSuffix {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    //  + and @ included because the formatted date will include those to replace @ in original email
+    formatter.dateFormat = @"+MMddyyyy-hhmmss@";
+    return [formatter stringFromDate:[NSDate date]];
 }
 
 - (IBAction)copyEmail:(NSMenuItem *)sender {
     NSInteger index = sender.tag;
     NSString *email = self.emails[index];
-    [self copyStringToClipboard:[NSString stringWithFormat:email, [self getUnixTimestamp]]];
+    NSString *uniqueEmail = [email stringByReplacingOccurrencesOfString:@"@" withString:[self getUniqueSuffix]];
+    [self copyStringToClipboard:uniqueEmail];
 }
 @end

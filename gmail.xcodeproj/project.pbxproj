@@ -18,9 +18,11 @@
 		513A034B239B0717001ABBE8 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 513A0349239B0717001ABBE8 /* email.png */; };
 		513A034E239B0812001ABBE8 /* email-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 513A034C239B0812001ABBE8 /* email-highlighted.png */; };
 		513A034F239B0812001ABBE8 /* email-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 513A034D239B0812001ABBE8 /* email-highlighted@2x.png */; };
+		BD2FBE89F4B754AAD8EF0560 /* Pods_gmail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9450CE7BC6212B79036717E3 /* Pods_gmail.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A36BB4E6D22B0792FFA27F3 /* Pods-gmail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmail.debug.xcconfig"; path = "Target Support Files/Pods-gmail/Pods-gmail.debug.xcconfig"; sourceTree = "<group>"; };
 		510CBD35239B233700A8B660 /* AddEmailWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddEmailWindowController.h; sourceTree = "<group>"; };
 		510CBD36239B233700A8B660 /* AddEmailWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddEmailWindowController.m; sourceTree = "<group>"; };
 		510CBD37239B233700A8B660 /* AddEmailWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEmailWindowController.xib; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		513A0349239B0717001ABBE8 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		513A034C239B0812001ABBE8 /* email-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-highlighted.png"; sourceTree = "<group>"; };
 		513A034D239B0812001ABBE8 /* email-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-highlighted@2x.png"; sourceTree = "<group>"; };
+		9450CE7BC6212B79036717E3 /* Pods_gmail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gmail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B580E5772BB17ABDFE703C0F /* Pods-gmail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gmail.release.xcconfig"; path = "Target Support Files/Pods-gmail/Pods-gmail.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2FBE89F4B754AAD8EF0560 /* Pods_gmail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				513A0332239AFB29001ABBE8 /* gmail */,
 				513A0331239AFB29001ABBE8 /* Products */,
+				8F9026B1247BF2C88CD136E4 /* Pods */,
+				D5B98C5479C7D09434161534 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +97,24 @@
 			path = gmail;
 			sourceTree = "<group>";
 		};
+		8F9026B1247BF2C88CD136E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A36BB4E6D22B0792FFA27F3 /* Pods-gmail.debug.xcconfig */,
+				B580E5772BB17ABDFE703C0F /* Pods-gmail.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D5B98C5479C7D09434161534 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9450CE7BC6212B79036717E3 /* Pods_gmail.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 513A0341239AFB2A001ABBE8 /* Build configuration list for PBXNativeTarget "gmail" */;
 			buildPhases = (
+				092439109F238C1E2172FA91 /* [CP] Check Pods Manifest.lock */,
 				513A032C239AFB29001ABBE8 /* Sources */,
 				513A032D239AFB29001ABBE8 /* Frameworks */,
 				513A032E239AFB29001ABBE8 /* Resources */,
+				E7D3BC896AAD0B57FDE3B4FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +185,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		092439109F238C1E2172FA91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gmail-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7D3BC896AAD0B57FDE3B4FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gmail/Pods-gmail-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-gmail/Pods-gmail-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-gmail/Pods-gmail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		513A032C239AFB29001ABBE8 /* Sources */ = {
@@ -296,6 +365,7 @@
 		};
 		513A0342239AFB2A001ABBE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A36BB4E6D22B0792FFA27F3 /* Pods-gmail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = gmail/gmail.entitlements;
@@ -314,6 +384,7 @@
 		};
 		513A0343239AFB2A001ABBE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B580E5772BB17ABDFE703C0F /* Pods-gmail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = gmail/gmail.entitlements;
